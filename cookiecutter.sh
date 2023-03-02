@@ -1,7 +1,7 @@
 #!/bin/bash
 pip install cookiecutter --upgrade
 tmpdir=$(mktemp -u)
-echo 'Using $tmpdir...'
+echo "Using $tmpdir..."
 mkdir -p $tmpdir/template/{{cookiecutter.project_repo}}
 cp -r . $tmpdir/template/{{cookiecutter.project_repo}}
 rm -rf $tmpdir/template/{{cookiecutter.project_repo}}/.git

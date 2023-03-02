@@ -1,8 +1,8 @@
 {
     "project_title": "MyAppName",
-    "project_name": "myappname",
-    "project_repo": "pyramid-app-myappname",
-    "project_slug": "pyramid_app_myappname",
+    "project_name": "{{ cookiecutter.project_title.lower().replace(' ','').replace('-','').replace('_','') }}",
+    "project_repo": "{{ 'pyramid-app-' + cookiecutter.project_name }}",
+    "project_slug": "{{ 'pyramid_app_' + cookiecutter.project_name }}",
     "project_short_description": "",
     "author_name": "Author",
     "author_email": "author@vanoord.com",
