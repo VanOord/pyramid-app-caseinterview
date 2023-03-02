@@ -1,0 +1,13 @@
+{
+    "project_title": "MyAppName",
+    "project_name": "myappname",
+    "project_repo": "pyramid-app-myappname",
+    "project_slug": "pyramid_app_myappname",
+    "project_short_description": "",
+    "author_name": "Author",
+    "author_email": "author@vanoord.com",
+    "inject_frontend": [
+        "no",
+        "yes"
+    ]
+}
