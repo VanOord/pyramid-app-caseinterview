@@ -35,5 +35,5 @@ if [ -f "$REPLAYFILESRC" ]; then
 fi
 
 # clean up
-rm -rf {{*}}
+find . -iname '{{*}}' -delete
 rm -rf $TMPDIR
