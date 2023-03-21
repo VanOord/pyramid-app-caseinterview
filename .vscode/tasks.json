@@ -6,7 +6,19 @@
         {
             "label": "cookiecutter",
             "type": "shell",
-            "command": ".cookiecutter/cookiecutter.sh"
+            "command": ".cookiecutter/cookiecutter.sh",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+                "close": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         }
     ]
 }
