@@ -1,6 +1,6 @@
 #!/bin/bash
 pip install cookiecutter --upgrade
-REPLAYFILE=cookiecutter.replay.json
+REPLAYFILE=.cookiecutter/cookiecutter.replay.json
 REPLAYFILESRC=~/.cookiecutter_replay/template.json
 TMPDIR=$(mktemp -u)
 echo "Using working directory: $TMPDIR..."
@@ -20,4 +20,5 @@ cp -r $TMPDIR/rendered/*/* .
 if [ -f "$REPLAYFILESRC" ]; then
     cp -r $REPLAYFILESRC $REPLAYFILE
 fi
+rm -rf {{*}}
 rm -rf $TMPDIR
