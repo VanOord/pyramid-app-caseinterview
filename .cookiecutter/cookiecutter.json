@@ -5,7 +5,7 @@
     "project_slug": "{{ 'pyramid_app_' + cookiecutter.project_name }}",
     "project_short_description": "",
     "author_name": "Author",
-    "author_email": "author@vanoord.com",
+    "author_email": "{{ cookiecutter.author_name.repalace(' ','.').lower() + '@vanoord.com' }}",
     "inject_frontend": [
         "no",
         "yes"
