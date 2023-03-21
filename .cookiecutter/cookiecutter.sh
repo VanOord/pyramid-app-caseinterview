@@ -2,7 +2,7 @@
 
 # link template repo and merge latest changes
 git remote -v | grep -w template || git remote add template https://github.com/VanOord/template-pyramid-app.git
-git fetch template
+git fetch template master
 git merge template/master --allow-unrelated-histories --strategy-option theirs --no-commit --no-ff
 
 # create cookiecutter environment
