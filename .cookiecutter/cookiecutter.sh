@@ -12,7 +12,7 @@ cp -r .cookiecutter/* $TMPDIR/template
 mkdir -p $TMPDIR/rendered
 if [ -f "$REPLAYFILE" ]; then
     echo "Using replay file: $REPLAYFILE"
-    cookiecutter -f --replay-file ./$REPLAYFILE -o $TMPDIR/rendered $TMPDIR/template
+    cookiecutter -f -o $TMPDIR/rendered $TMPDIR/template --replay-file ./$REPLAYFILE
 else 
     cookiecutter -f -o $TMPDIR/rendered $TMPDIR/template
 fi
