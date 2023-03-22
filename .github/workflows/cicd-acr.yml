@@ -13,7 +13,7 @@ on:
 
 jobs:
   cicd_acr:
-    uses: VanOord/datalab-github-actions/cicd-acr.yml@master
+    uses: VanOord/datalab-github-actions/.github/workflows/cicd-acr.yml@master
     with:
       tag: {{cookiecutter.project_repo}}
       namespace: {{cookiecutter.project_name}}
