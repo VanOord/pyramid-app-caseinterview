@@ -17,7 +17,7 @@ mkdir -p $TMPDIR/template/{{cookiecutter.project_repo}}
 cp -r . $TMPDIR/template/{{cookiecutter.project_repo}}
 rm -rf $TMPDIR/template/{{cookiecutter.project_repo}}/.git
 rm -rf $TMPDIR/template/{{cookiecutter.project_repo}}/.cookiecutter
-cp -r .cookiecutter/* $TMPDIR/template
+cp -r .cookiecutter/. $TMPDIR/template
 mkdir -p $TMPDIR/rendered
 
 # apply cookiecutter
@@ -29,7 +29,7 @@ else
 fi
 
 # copy result
-cp -r $TMPDIR/rendered/*/* .
+cp -r $TMPDIR/rendered/*/. .
 if [ -f "$REPLAYFILESRC" ]; then
     cp -r $REPLAYFILESRC $REPLAYFILE
 fi
