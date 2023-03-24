@@ -6,7 +6,7 @@ from pyramid.config import Configurator
 from pyramid.events import NewRequest
 from pyramid.settings import asbool
 
-from .authorization import GlobalSecurityPolicy, GlobalRootFactory
+from .authorization import GlobalRootFactory, GlobalSecurityPolicy
 
 __version__ = pkg_resources.get_distribution(__name__).version
 
