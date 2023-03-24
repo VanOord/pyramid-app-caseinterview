@@ -1,5 +1,5 @@
 """Pyramid Authorization classes."""
-from pyramid.security import ALL_PERMISSIONS, Allow, Authenticated
+from pyramid.authorization import ALL_PERMISSIONS, Allow, Authenticated
 
 from pyramid_mod_accounts.config import MySecurityPolicy, RootFactory
 
