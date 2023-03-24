@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# don't run when in template directory
+pwd=`pwd`
+base=`basename $pwd`
+if [ $base = "template-pyramid-app" ]; then
+    exit
+fi
+
 # link template repo and merge latest changes
 git remote -v | grep -w template || git remote add template https://github.com/VanOord/template-pyramid-app.git
 git fetch template master
