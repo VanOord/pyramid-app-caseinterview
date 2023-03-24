@@ -5,9 +5,27 @@
     "project_slug": "{{ 'pyramid_app_' + cookiecutter.project_name }}",
     "project_short_description": "",
     "author_name": "Author",
-    "author_email": "{{ cookiecutter.author_name.repalace(' ','.').lower() + '@vanoord.com' }}",
+    "author_email": "{{ cookiecutter.author_name.replace(' ','.').lower() + '@vanoord.com' }}",
     "inject_frontend": [
         "no",
         "yes"
+    ],
+    "_copy_without_render": [
+        "*.txt",
+        "*.json",
+        "*.pdf",
+        "*.png",
+        "*.jpg",
+        "*.gif",
+        "docs",
+        "tests",
+        "build",
+        "htmlcov",
+        "notebooks",
+        ".eggs",
+        ".mypy_cache",
+        ".pytest_cache",
+        "*__pycache__",
+        "*.egg-info"
     ]
 }

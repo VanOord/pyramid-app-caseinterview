@@ -47,6 +47,7 @@ coverage.xml
 .hypothesis/
 .mypy_cache
 .pytest_cache
+.pylint.d/
 
 # Translations
 *.mo
@@ -88,14 +89,17 @@ ENV/
 # Rope project settings
 .ropeproject
 
-.pylint.d/
+# Data
 faux_data
+data/*
+~$*.xlsx
 
 # vue app
 .DS_Store
 node_modules
 
 # local env files
+.env
 .env.local
 .env.*.local
 
@@ -111,3 +115,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# Frontend
+app
