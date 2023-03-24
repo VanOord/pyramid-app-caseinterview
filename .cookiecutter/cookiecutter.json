@@ -11,8 +11,6 @@
         "yes"
     ],
     "_copy_without_render": [
-        "*.txt",
-        "*.json",
         "*.pdf",
         "*.png",
         "*.jpg",

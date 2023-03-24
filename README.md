@@ -1,4 +1,4 @@
-[ ![CircleCI](https://circleci.com/gh/VanOord/{{cookiecutter.project_repo}}.svg?style=shield&circle-token=b74428cc9b75e97046da8db9db84804d8477c7a3)](https://circleci.com/gh/VanOord/{{cookiecutter.project_repo}})[ ![coverage](https://img.shields.io/badge/code-coverage-blue.svg)](https://circleci.com/api/v1/project/VanOord/{{cookiecutter.project_repo}}/latest/artifacts/0/$CIRCLE_ARTIFACTS/htmlcov/index.html?circle-token=b74428cc9b75e97046da8db9db84804d8477c7a3&branch=master)
+[![CICD - ACR - Python](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/cicd-acr-python.yml/badge.svg)](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/cicd-acr-python.yml)
 
 
 # {{cookiecutter.project_title}}
