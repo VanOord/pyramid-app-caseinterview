@@ -17,3 +17,4 @@ jobs:
     with:
       tag: {{cookiecutter.project_repo}}
       namespace: {{cookiecutter.project_name}}
+    secrets: inherit
