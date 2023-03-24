@@ -39,7 +39,7 @@ def get_config(settings=None):
 
     config.set_root_factory(GlobalRootFactory)
 
-    config.include("pyjade.ext.pyramid")
+    config.include("pypugjs.ext.pyramid")
     config.include("pyramid_mod_basemodel")
     config.include("pyramid_mod_huisstijl")
     config.include("pyramid_mod_accounts")

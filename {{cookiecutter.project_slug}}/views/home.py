@@ -15,7 +15,7 @@ class Home(View):
     @view_config(
         route_name="home",
         permission=NO_PERMISSION_REQUIRED,
-        renderer="../templates/home.jade",
+        renderer="../templates/home.pug",
     )
     def home(self):
         """Home page."""
