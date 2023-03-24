@@ -59,7 +59,7 @@ COPY --chown=me:me setup.cfg .
 
 # run pip install
 RUN --mount=type=cache,target=/tmp/cache/pip \
-    pip install -e .[testing]  --extra-index-url $PYPI_URL
+    pip install -e .[testing]  --index-url $PYPI_URL
 
 # copy current directory in /app
 COPY --chown=me:me . /app
