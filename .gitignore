@@ -88,8 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-.vscode/settings.json
-
 .pylint.d/
 faux_data
 
@@ -113,6 +111,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-
-# Helm chart (should be stored in VanOord/helm repo)
-deployment/
