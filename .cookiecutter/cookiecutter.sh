@@ -37,7 +37,7 @@ fi
 
 # copy result
 cp -r $TMPDIR/rendered/*/. .
-if [ ! -f "$REPLAYFILE" && -f "$REPLAYFILESRC" ]; then
+if [ ! -f "$REPLAYFILE" ] && [ -f "$REPLAYFILESRC" ]; then
     cp -r $REPLAYFILESRC $REPLAYFILE
 fi
 
