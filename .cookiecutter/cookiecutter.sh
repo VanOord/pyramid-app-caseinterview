@@ -10,7 +10,7 @@ fi
 # link template repo and merge latest changes
 git remote -v | grep -w template || git remote add template https://github.com/VanOord/template-pyramid-app.git
 git fetch template master
-git merge template/master --allow-unrelated-histories --strategy-option theirs --no-commit
+git merge template/master --allow-unrelated-histories --no-commit
 
 # create cookiecutter environment
 pip install cookiecutter --upgrade
@@ -37,7 +37,7 @@ fi
 
 # copy result
 cp -r $TMPDIR/rendered/*/. .
-if [ -f "$REPLAYFILESRC" ]; then
+if [ ! -f "$REPLAYFILE" && -f "$REPLAYFILESRC" ]; then
     cp -r $REPLAYFILESRC $REPLAYFILE
 fi
 
