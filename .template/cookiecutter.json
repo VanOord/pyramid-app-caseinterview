@@ -16,7 +16,6 @@
         "*.jpg",
         "*.gif",
         "docs",
-        "tests",
         "build",
         "htmlcov",
         "notebooks",

@@ -4,9 +4,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "cookiecutter",
+            "label": "template",
             "type": "shell",
-            "command": ".cookiecutter/cookiecutter.sh",
+            "command": ".template/render.sh",
+            "windows": {
+                "command": ".template/render.bat",
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "always",
