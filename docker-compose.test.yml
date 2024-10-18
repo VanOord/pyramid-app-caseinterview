@@ -1,5 +1,3 @@
-version: '3.2'
-
 services:
   app:
     # Execute nonsense command to ensure that the docker keeps running,

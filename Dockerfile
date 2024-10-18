@@ -6,7 +6,7 @@ FROM ${CONTAINER_REGISTRY}/quasar-app-{{cookiecutter.project_name}}:${FRONTEND_V
 
 {% endif -%}
 # get python base
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-bookworm
 ARG PIP_ACCESS_TOKEN
 ARG FRONTEND_VERSION
 ARG PYPI_URL=https://${PIP_ACCESS_TOKEN}@pkgs.dev.azure.com/VanOord-IT/VanOord_Artifacts/_packaging/VanOord_Artifacts/pypi/simple/
