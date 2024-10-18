@@ -10,7 +10,7 @@ from sqlalchemy.orm.session import Session
 class TestDatabase:
     def test_version(self, session_tm: Session) -> None:
         v = session_tm.query(func.version()).one()[0]
-        assert re.match(r"PostgreSQL 1(0|1|2|3|4)\.", v)
+        assert re.match(r"PostgreSQL 1(3|4|5|6)\.", v)
 
 
 class TestApp:
