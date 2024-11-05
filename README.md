@@ -1,4 +1,5 @@
-[![CICD - ACR - Python](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/cicd-acr-python.yml/badge.svg)](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/cicd-acr-python.yml)
+[ ![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://vanoord.github.io/pyramid-app-voice/docs/) [ ![coverage](https://github.com/VanOord/pyramid-app-voice/blob/gh-pages/coverage/coverage.svg)](https://vanoord.github.io/pyramid-app-voice/coverage/) [![CICD - ACR - Python](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/action.yml/badge.svg)](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/action.yml)
+
 
 
 # {{cookiecutter.project_title}}
