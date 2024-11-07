@@ -3,3 +3,6 @@ services:
     # Execute nonsense command to ensure that the docker keeps running,
     # but does not start the pyramid servers as these are not needed for testing
     command: bash -c "tail -f /dev/null"
+    volumes:
+      - ${PWD}/htmlcov:/{{cookiecutter.project_repo}}/htmlcov
+      - ${PWD}/docs/_build:/{{cookiecutter.project_repo}}/docs/_build
