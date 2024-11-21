@@ -11,6 +11,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+          
 jobs:
   cicd_acr:
     uses: VanOord/datalab-github-actions/.github/workflows/cicd-acr-pyramid.yml@master
