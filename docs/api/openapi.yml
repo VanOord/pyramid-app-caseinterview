@@ -1,0 +1,31 @@
+openapi: "3.0.2"
+info:
+  title: {{cookiecutter.project_title}} API
+  description: {{cookiecutter.project_short_description}}
+  version: "1.0.0"
+  contact:
+    name: {{cookiecutter.author_name}}
+    email: {{cookiecutter.author_email}}
+servers:
+  - url: https://{{cookiecutter.project_name}}.data.vanoord.com/api/v1
+    description: Production server
+  - url: https://{{cookiecutter.project_name}}.data-dev.vanoord.com/api/v1
+    description: Staging server
+  - url: http://localhost:6543/api/v1
+    description: Local development server
+paths:
+  /:
+    get:
+      responses:
+        "200":
+          description: OK
+components:
+  securitySchemes:
+    api_key_query:
+      type: apiKey
+      name: api_key
+      in: query
+    api_key_header:
+      type: apiKey
+      name: X-Api-Key
+      in: header

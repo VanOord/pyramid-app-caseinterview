@@ -1,0 +1,10 @@
+services:
+  app:
+    volumes:
+      - .:/app
+    command: bash -c "tail -f /dev/null"
+    environment:
+      - PIP_ACCESS_TOKEN=${PIP_ACCESS_TOKEN}
+    ports:
+      - '6543:6543'
+      - '8888:8888'

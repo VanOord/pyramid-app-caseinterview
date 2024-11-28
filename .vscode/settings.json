@@ -1,0 +1,3 @@
+{
+    "window.title": "${dirty}{{ cookiecutter.project_repo }}${separator}${rootName}${separator}${appName}"
+}
