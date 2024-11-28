@@ -20,6 +20,6 @@ jobs:
   cicd_acr:
     uses: VanOord/datalab-github-actions/.github/workflows/cicd-acr-pyramid.yml@master
     with:
-      tag: {{cookiecutter.project_repo}}
-      namespace: {{cookiecutter.project_name}}
+      tag: pyramid-app-caseinterview
+      namespace: caseinterview
     secrets: inherit

@@ -16,7 +16,7 @@ class TestDatabase:
 class TestApp:
     def test_home(self, testapp) -> None:
         res = testapp.get("/", status=200)
-        assert b"<h1>{{cookiecutter.project_title}}</h1>" in res.body
+        assert b"<h1>caseinterview</h1>" in res.body
         res = testapp.get("/users/create", status=302).follow()
 
     def test_home_admin(self, testapp, as_admin) -> None:

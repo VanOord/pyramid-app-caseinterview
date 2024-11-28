@@ -1,1 +1,1 @@
-Copyright {{cookiecutter.author_name}}
+Copyright Datalab

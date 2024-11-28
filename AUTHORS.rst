@@ -1,4 +1,4 @@
 Developers
 ----------
 
-* {{cookiecutter.author_name}} <{{cookiecutter.author_email}}>
+* Datalab <datalab@vanoord.com>

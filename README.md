@@ -1,11 +1,11 @@
-[ ![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://vanoord.github.io/pyramid-app-voice/docs/) [ ![coverage](https://github.com/VanOord/pyramid-app-voice/blob/gh-pages/coverage/coverage.svg)](https://vanoord.github.io/pyramid-app-voice/coverage/) [![CICD - ACR - Python](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/action.yml/badge.svg)](https://github.com/VanOord/{{cookiecutter.project_repo}}/actions/workflows/action.yml)
+[ ![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://vanoord.github.io/pyramid-app-voice/docs/) [ ![coverage](https://github.com/VanOord/pyramid-app-voice/blob/gh-pages/coverage/coverage.svg)](https://vanoord.github.io/pyramid-app-voice/coverage/) [![CICD - ACR - Python](https://github.com/VanOord/pyramid-app-caseinterview/actions/workflows/action.yml/badge.svg)](https://github.com/VanOord/pyramid-app-caseinterview/actions/workflows/action.yml)
 
 
 
-# {{cookiecutter.project_title}}
-{{cookiecutter.project_short_description}}
+# caseinterview
+A pyramid app for case interview
 
-# Installation and running {{cookiecutter.project_name}}
+# Installation and running caseinterview
 
 ## Installation instructions:
 
@@ -13,8 +13,8 @@ Make sure you have python>3.5.1 and git installed, so they are available from th
 
 ```bash
 # clone code from git
-git clone https://github.com/VanOord/{{cookiecutter.project_repo}}.git
-cd {{cookiecutter.project_repo}}
+git clone https://github.com/VanOord/pyramid-app-caseinterview.git
+cd pyramid-app-caseinterview
 
 # upgrade pip
 pip install -U pip
@@ -94,7 +94,7 @@ These scripts are made available as executables (.exe on Windows) rather than as
 so you can run them from anywhere without starting a python instance yourselves (in Anaconda3\Scripts\ on Windows).
 With these executable-scripts, the database can be initialised as follows:
 
-    {{cookiecutter.project_slug}}_initialize_db development.ini
+    pyramid_app_caseinterview_initialize_db development.ini
 
 Serve with
 
@@ -114,14 +114,14 @@ Set environmental variables if necessary (see above) and run
 pytest
 ```
 
-# run {{cookiecutter.project_slug}} app in containers
+# run pyramid_app_caseinterview app in containers
 
 Make sure you have docker and docker-compose installed.
 
 Build the image:
 
 ```bash
-docker build -t {{cookiecutter.project_slug}} .
+docker build -t pyramid_app_caseinterview .
 ```
 
 Create and run the docker-compose.yml file:
@@ -133,7 +133,7 @@ docker-compose up
 Start a terminal inside the application container:
 
 ```bash
-docker exec -it {{cookiecutter.project_slug}}_app /bin/bash
+docker exec -it pyramid_app_caseinterview_app /bin/bash
 ```
 
 Install the environment:
@@ -145,7 +145,7 @@ pip install -e .
 Initialize and synchronize the database:
 
 ```bash
-{{cookiecutter.project_slug}}_initialize_db development-docker.ini
+pyramid_app_caseinterview_initialize_db development-docker.ini
 ```
 
 Run the application:

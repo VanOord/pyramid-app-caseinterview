@@ -45,7 +45,7 @@ def menu(self):
     return menu
 
 
-BaseView.project_name = "{{cookiecutter.project_title}}"
+BaseView.project_name = "caseinterview"
 BaseView.include_security = True
 BaseView.menu = menu
 

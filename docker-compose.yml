@@ -1,7 +1,7 @@
 services:
   database:
     image: postgres:15.7
-    container_name: {{cookiecutter.project_name}}_database
+    container_name: caseinterview_database
     ports:
       - "5432:5432"
     environment:
@@ -9,24 +9,24 @@ services:
       - PG_MODE=primary
       - PG_USER=postgres
       - PG_PASSWORD=abc
-      - PG_DATABASE={{cookiecutter.project_name}}
+      - PG_DATABASE=caseinterview
       - PG_PRIMARY_USER=repluser
       - PG_PRIMARY_PASSWORD=abc
       - PG_ROOT_PASSWORD=abc
       - PG_PRIMARY_PORT=5432
 
   app:
-    image: {{cookiecutter.project_repo}}
+    image: pyramid-app-caseinterview
     build:
       context: .
       args:
         CONTAINER_REGISTRY: ${CONTAINER_REGISTRY}
         PIP_ACCESS_TOKEN: ${PIP_ACCESS_TOKEN}
-    container_name: {{cookiecutter.project_name}}_app
+    container_name: caseinterview_app
     environment:
       - PG_PASSWORD=abc
       - PG_USER=postgres
-      - PG_DBNAME={{cookiecutter.project_name}}
+      - PG_DBNAME=caseinterview
       - PG_PORT=5432
       - PG_HOST=database
       - AD_TENANT_ID=${AD_TENANT_ID}

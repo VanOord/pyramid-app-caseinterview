@@ -1,8 +1,8 @@
 """Initialize database.
 
 Usage:
-  {{cookiecutter.project_slug}}_initialize_db <inifile> [options]
-  {{cookiecutter.project_slug}}_initialize_db --help
+  pyramid_app_caseinterview_initialize_db <inifile> [options]
+  pyramid_app_caseinterview_initialize_db --help
 
 Options:
   -h --help                 Show this screen.
@@ -19,8 +19,8 @@ from pyramid.paster import get_appsettings, setup_logging
 
 from alembic import command
 from alembic.config import Config
-from {{cookiecutter.project_slug}} import get_config
-from {{cookiecutter.project_slug}}.models import (
+from pyramid_app_caseinterview import get_config
+from pyramid_app_caseinterview.models import (
     Base,
     get_engine,
     get_session_factory,

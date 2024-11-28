@@ -8,4 +8,4 @@ export PIP_INDEX_URL=https://$PIP_ACCESS_TOKEN@pkgs.dev.azure.com/VanOord-IT/Van
 
 # install application
 pip install -e '.[testing]' --upgrade
-{{cookiecutter.project_slug}}_initialize_db development-docker.ini
+pyramid_app_caseinterview_initialize_db development-docker.ini

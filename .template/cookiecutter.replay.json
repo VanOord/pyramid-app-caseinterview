@@ -1,0 +1,28 @@
+{
+  "cookiecutter": {
+    "project_title": "caseinterview",
+    "project_name": "caseinterview",
+    "project_repo": "pyramid-app-caseinterview",
+    "project_slug": "pyramid_app_caseinterview",
+    "project_short_description": "A pyramid app for case interview",
+    "author_name": "Datalab",
+    "author_email": "datalab@vanoord.com",
+    "inject_frontend": "no",
+    "_copy_without_render": [
+      "*.pdf",
+      "*.png",
+      "*.jpg",
+      "*.gif",
+      "docs",
+      "build",
+      "htmlcov",
+      "notebooks",
+      ".eggs",
+      ".mypy_cache",
+      ".pytest_cache",
+      "*__pycache__",
+      "*.egg-info"
+    ],
+    "_template": "/tmp/tmptaj0fk0e/template"
+  }
+}

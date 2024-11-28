@@ -6,8 +6,8 @@ import transaction
 import webtest
 from paste.deploy.loadwsgi import appconfig
 
-from {{cookiecutter.project_slug}} import main
-from {{cookiecutter.project_slug}}.models import Base, User, get_tm_session
+from pyramid_app_caseinterview import main
+from pyramid_app_caseinterview.models import Base, User, get_tm_session
 
 from .helpers import sign_in, user_remove
 
@@ -19,7 +19,7 @@ SETTINGS = appconfig("config:" + INI_FILE)
 def app():
     app = main({}, **SETTINGS)
     print("SETUP app")
-    from {{cookiecutter.project_slug}}.scripts import initializedb
+    from pyramid_app_caseinterview.scripts import initializedb
 
     initializedb.main([str(INI_FILE), "--drop-all"])
     yield app
