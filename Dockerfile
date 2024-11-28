@@ -1,14 +1,6 @@
-{%- if cookiecutter.inject_frontend == "yes" -%}
-ARG CONTAINER_REGISTRY
-ARG FRONTEND_VERSION=v1.0.0
-
-FROM ${CONTAINER_REGISTRY}/quasar-app-{{cookiecutter.project_name}}:${FRONTEND_VERSION} AS frontend
-
-{% endif -%}
 # get python base
 FROM python:3.10-slim-bookworm
 ARG PIP_ACCESS_TOKEN
-ARG FRONTEND_VERSION
 ARG PYPI_URL=https://${PIP_ACCESS_TOKEN}@pkgs.dev.azure.com/VanOord-IT/VanOord_Artifacts/_packaging/VanOord_Artifacts/pypi/simple/
 
 # use the same userid in the container as you have outside of the container
@@ -20,12 +12,7 @@ RUN useradd -ms /bin/bash me
 
 # set the permissions for the UID/GID
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then groupmod --gid $USER_GID me && usermod --uid $USER_UID --gid $USER_GID me; fi
-{% if cookiecutter.inject_frontend == "yes" %}
-# copy frontend
-ENV FRONTEND_VERSION=${FRONTEND_VERSION}
-RUN rm -rf /quasar-app
-COPY --chown=me:me --from=frontend /app/dist/spa /quasar-app
-{% endif %}
+
 # run apt update/upgrade/install commands
 # use buildkit cache directory 
 RUN rm -f /etc/apt/apt.conf.d/docker-clean
@@ -72,11 +59,7 @@ RUN --mount=type=cache,target=/tmp/cache/pip \
 RUN chown -R me:me /home/me /app
 
 USER me
-{% if cookiecutter.inject_frontend == "yes" %}
-# link frontend in {{cookiecutter.project_repo}}-frontend
-RUN rm -rf /app/{{cookiecutter.project_slug}}/app && \
-    ln -s /quasar-app /app/{{cookiecutter.project_slug}}/app
-{% endif %}
+
 EXPOSE 6543
 
 CMD ["sh", "-c", "/app/entrypoint.sh"]
