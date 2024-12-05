@@ -8,3 +8,6 @@ def includeme(config):
         name="static", path="pyramid_app_caseinterview:static", cache_max_age=3600
     )
     config.add_route("home", "/")
+    config.add_route("timeseries", "/api/v1/timeseries")
+    config.add_route("depthseries", "/api/v1/depthseries")
+    config.add_route("activity", "/api/v1/activity")
