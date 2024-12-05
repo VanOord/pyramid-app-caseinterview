@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Pyramid Application",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pyramid.scripts.pserve",
+            "args": [
+                "${workspaceFolder}/development-docker.ini",
+                "--reload"
+            ],
+            "pyramid": true,
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Pyramid Script",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "${workspaceFolder}/development-docker.ini"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "Python: Debug Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "purpose": [
+                "debug-test"
+            ],
+            "env": {
+                "PG_DBNAME": "test",
+                "PYTEST_ADDOPTS": "--no-cov",
+            },
+            "justMyCode": true,
+        },
+    ]
+}

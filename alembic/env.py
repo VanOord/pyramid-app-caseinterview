@@ -1,4 +1,5 @@
 """Alembic environent."""
+
 import logging
 import os
 from logging.config import fileConfig

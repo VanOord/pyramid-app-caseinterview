@@ -1,4 +1,5 @@
 """Return a Pyramid WSGI application."""
+
 import os
 
 import pkg_resources

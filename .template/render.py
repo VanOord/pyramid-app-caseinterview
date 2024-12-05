@@ -16,7 +16,7 @@ logger.setLevel(logging.INFO)
 
 class Renderer:
     """Class to update cookiecutter template from Git remote."""
-    
+
     def __init__(
         self,
         replay_file=".template/cookiecutter.replay.json",

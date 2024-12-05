@@ -10,6 +10,7 @@ Options:
   --drop-all                Drop all databases first.
 
 """
+
 import logging
 import os
 

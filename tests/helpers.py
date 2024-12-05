@@ -1,4 +1,5 @@
 """Helper functions for tests."""
+
 from uuid import UUID
 
 from webtest.app import TestApp
