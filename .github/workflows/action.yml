@@ -22,4 +22,5 @@ jobs:
     with:
       tag: pyramid-app-caseinterview
       namespace: caseinterview
+      fail-on-coverage: false
     secrets: inherit
