@@ -6,7 +6,6 @@ Base.metadata prior to any initialization routines
 
 from sqlalchemy.orm import configure_mappers
 
-from pyramid_app_caseinterview.models.activity import Activity
 from pyramid_app_caseinterview.models.depthseries import Depthseries
 from pyramid_app_caseinterview.models.timeseries import Timeseries
 from pyramid_mod_accounts import Role, User, UserRole
@@ -33,5 +32,4 @@ __all__ = [
     "UserRole",
     "Timeseries",
     "Depthseries",
-    "Activity",
 ]
