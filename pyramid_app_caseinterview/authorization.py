@@ -1,28 +1,44 @@
 """Pyramid Authorization classes."""
 
-from pyramid.authorization import ALL_PERMISSIONS, Allow, Authenticated
-
-from pyramid_mod_accounts.config import MySecurityPolicy, RootFactory
+from pyramid.authorization import ACLHelper, Allow, Authenticated, Everyone
 
 
-class GlobalSecurityPolicy(MySecurityPolicy):
+class GlobalSecurityPolicy:
     """Define the effective principals."""
 
-    def effective_principals(self, request):
-        """Return a sequence representing the effective principals.
-        Typically this is including the :term:`userid` and any groups belonged
-        to by the current user, always including 'system' groups such
-        as ``pyramid.security.Everyone`` and
-        ``pyramid.security.Authenticated``.
-        """
-        principals = super().effective_principals(request)
-        return principals
+    def __init__(self, **kwargs):
+        self.acl = ACLHelper()
+
+    def effective_principals(self):
+        return set([Everyone])
+
+    def permits(self, request, context, permission):
+        principals = self.effective_principals()
+        return self.acl.permits(context, principals, permission)
+
+    def authenticated_userid(self, request):
+        return "id"
 
 
-class GlobalRootFactory(RootFactory):
+class GlobalRootFactory(object):
     """Define the ACL."""
 
-    __acl__ = [
+    __name__ = None
+    __parent__ = None
+
+    # the default Access Control List is very limited. This is expected to be
+    # extended in the scope of the application that is used.
+    __base_acl__ = [
         (Allow, Authenticated, Authenticated),
-        (Allow, "role:admin", ALL_PERMISSIONS),
     ]
+
+    __extra_acl__: list[tuple] = []  # This can be defined by the app.
+
+    def __acl__(self):
+        all_acls = [*self.__base_acl__, *self.__extra_acl__]
+        merged_acl = {entry[1]: entry for entry in all_acls}
+        return list(merged_acl.values())
+
+    def __init__(self, request):
+        """Instantiate root factory."""
+        self.request = request

@@ -1,5 +1,6 @@
 """Sel value API"""
 
+from pyramid.security import NO_PERMISSION_REQUIRED
 from pyramid.view import view_config
 
 from pyramid_app_caseinterview.models import Depthseries, Timeseries
@@ -12,7 +13,7 @@ class API(View):
 
     @view_config(
         route_name="timeseries",
-        permission="read",
+        permission=NO_PERMISSION_REQUIRED,
         renderer="json",
         request_method="GET",
     )
@@ -29,7 +30,7 @@ class API(View):
 
     @view_config(
         route_name="depthseries",
-        permission="read",
+        permission=NO_PERMISSION_REQUIRED,
         renderer="json",
         request_method="GET",
     )

@@ -1,11 +1,7 @@
 """Home page."""
 
-from pyramid.response import Response
 from pyramid.security import NO_PERMISSION_REQUIRED
 from pyramid.view import view_config
-from sqlalchemy.exc import DBAPIError
-
-from pyramid_mod_accounts.models import User
 
 from . import View
 
@@ -19,12 +15,6 @@ class Home(View):
         renderer="../templates/home.pug",
     )
     def home(self):
-        """Home page."""
-        try:
-            self.request.session.query(User).first()
-        except DBAPIError:
-            return Response(db_err_msg, content_type="text/plain", status=500)
-
         return {}
 
 

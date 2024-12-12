@@ -5,7 +5,14 @@ import os
 import pkg_resources
 from pyramid.config import Configurator
 from pyramid.events import NewRequest
+from pyramid.session import JSONSerializer, SignedCookieSessionFactory
 from pyramid.settings import asbool
+
+from pyramid_app_caseinterview.models import (
+    get_engine,
+    get_session_factory,
+    get_tm_session,
+)
 
 from .authorization import GlobalRootFactory, GlobalSecurityPolicy
 
@@ -41,21 +48,30 @@ def get_config(settings=None):
     config.set_root_factory(GlobalRootFactory)
 
     config.include("pypugjs.ext.pyramid")
-    config.include("pyramid_mod_basemodel")
-    config.include("pyramid_mod_huisstijl")
-    config.include("pyramid_mod_accounts")
-    config.include("pyramid_mod_dataframe")
 
     settings = config.get_settings()
-    security_policy = GlobalSecurityPolicy(
-        settings["auth.secret"],
-        hashalg="sha512",
-        path=settings["cookie.path"],
-        max_age=settings["auth.max_age"],
-    )
+    security_policy = GlobalSecurityPolicy()
     config.set_security_policy(security_policy)
 
     config.include(".routes")
+    config.include("pyramid_tm")
+
+    settings = config.get_settings()
+    settings["session.secret"] = settings.get("session.secret", None)
+
+    config.set_session_factory(
+        SignedCookieSessionFactory(
+            settings["session.secret"], serializer=JSONSerializer
+        )
+    )
+    session_factory = get_session_factory(get_engine(settings))
+    config.registry["session_factory"] = session_factory
+    config.add_request_method(
+        # r.tm is the transaction manager used by pyramid_tm
+        lambda r: get_tm_session(session_factory, r.tm),
+        "session",
+        reify=True,
+    )
 
     config.scan()
     return config
