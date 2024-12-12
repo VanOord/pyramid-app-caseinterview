@@ -14,9 +14,12 @@ Options:
 import logging
 import os
 
+import transaction
 from docopt import docopt
 from pyramid.paster import get_appsettings, setup_logging
 
+from alembic import command
+from alembic.config import Config
 from pyramid_app_caseinterview import get_config
 from pyramid_app_caseinterview.models import Base, get_engine
 
@@ -48,6 +51,12 @@ def main(argv=None):
 
     # create all tables
     Base.metadata.create_all(engine)
+
+    with transaction.manager:
+        logger.info("Adding alembic stamp...")
+        alembic_cfg = Config(ALEMBIC_INI)
+        command.stamp(alembic_cfg, "head")
+
     logger.info("Finished initializing database.")
 
 
