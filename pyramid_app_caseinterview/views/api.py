@@ -3,7 +3,8 @@
 from pyramid.security import NO_PERMISSION_REQUIRED
 from pyramid.view import view_config
 
-from pyramid_app_caseinterview.models import Depthseries, Timeseries
+from pyramid_app_caseinterview.models.depthseries import Depthseries
+from pyramid_app_caseinterview.models.timeseries import Timeseries
 
 from . import View
 

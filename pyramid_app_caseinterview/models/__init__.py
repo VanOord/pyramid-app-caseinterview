@@ -13,9 +13,6 @@ from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 from sqlalchemy.orm import configure_mappers, sessionmaker
 from sqlalchemy.schema import MetaData
 
-from pyramid_app_caseinterview.models.depthseries import Depthseries
-from pyramid_app_caseinterview.models.timeseries import Timeseries
-
 # run configure_mappers after defining all of the models to ensure
 # all relationships can be setup
 configure_mappers()
@@ -86,10 +83,9 @@ Base = declarative_base_with_abc(metadata=metadata)
 
 
 __all__ = [
+    "Base",
     "get_engine",
     "get_session_factory",
     "get_tm_session",
     "metadata",
-    "Timeseries",
-    "Depthseries",
 ]
