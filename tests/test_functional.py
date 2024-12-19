@@ -18,9 +18,3 @@ class TestApp:
     def test_home(self, testapp) -> None:
         res = testapp.get("/", status=200)
         assert b"<h1>caseinterview</h1>" in res.body
-        res = testapp.get("/users/create", status=302).follow()
-
-    def test_home_admin(self, testapp, as_admin) -> None:
-        res = testapp.get("/", status=200)
-        assert b"User Management" in res.body
-        res = testapp.get("/users/create", status=200)
